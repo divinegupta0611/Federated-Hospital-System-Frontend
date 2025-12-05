@@ -50,7 +50,7 @@ const HeartDisease = () => {
 
     try {
       // Send data to Django backend
-      const response = await fetch('http://localhost:8000/api/predict/heart-disease/', {
+      const response = await fetch('https://federated-hospital-system-backend.onrender.com/api/predict/heart-disease/', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
