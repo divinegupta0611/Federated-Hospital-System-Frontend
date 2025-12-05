@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import '../styles/NavBarCSS.css';
+import { Link } from 'react-router-dom';
 const NavBar = () => {
   const [user, setUser] = useState(null);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -46,9 +47,9 @@ const NavBar = () => {
         </button>
 
         <div className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
-          <a href="/" className="nav-link" onClick={closeMenu}>Home</a>
-          <a href="/about" className="nav-link" onClick={closeMenu}>About</a>
-          <a href="/contact" className="nav-link" onClick={closeMenu}>Contact</a>
+          <Link to="/" className="nav-link" onClick={closeMenu}>Home</Link>
+          <Link to="/about" className="nav-link" onClick={closeMenu}>About</Link>
+          <Link to="/contact" className="nav-link" onClick={closeMenu}>Contact</Link>
           
           {user ? (
             <div className="nav-auth">
@@ -60,7 +61,7 @@ const NavBar = () => {
               </div>
             </div>
           ) : (
-            <a href="/signup" className="btn-signup" onClick={closeMenu}>Sign Up</a>
+            <Link to="/signup" className="btn-signup" onClick={closeMenu}>Sign Up</Link>
           )}
         </div>
       </div>
